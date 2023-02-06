@@ -1,0 +1,37 @@
+Styles: ERXStyleSheet {
+	filename = "css/styles.css";
+}
+
+Script: ERXJavaScript {
+	filename = "js/script.js";
+}
+
+FavIcon16: ERXFavIcon {
+	filename = "img/favicon16.ico";
+	sizes = "16x16";
+}
+
+FavIcon32: ERXFavIcon {
+	filename = "img/favicon32.ico";
+	sizes = "32x32";
+}
+
+EntityImg: WOImage {
+	filename = "img/entity128.png";
+}
+
+Form: WOForm {
+}
+
+TextField: WOTextField {
+	value = formText;
+}
+
+Submit: WOSubmitButton {
+	action = echo;
+}
+
+TextValue: WOString {
+	value = formText;
+	valueWhenEmpty = "Enter something!";
+}
