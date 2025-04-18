@@ -1,0 +1,15 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+ -destination Sources ${symbol_escape}
+ -extension java ${symbol_escape}
+ -java ${symbol_escape}
+ -javaTemplate _Entity.java ${symbol_escape}
+ -model Resources/${artifactId}.eomodeld ${symbol_escape}
+ -packagedirs ${symbol_escape}
+ -subclassDestination Sources ${symbol_escape}
+ -subclassJavaTemplate Entity.java ${symbol_escape}
+ -templatedir EntityTemplates/wonder/ ${symbol_escape}
+ -verbose ${symbol_escape}
+ -loadModelGroup ${symbol_escape}
+ -superclassPackage eogen

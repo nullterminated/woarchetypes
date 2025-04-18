@@ -5,6 +5,7 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
-		<module>webobjects-app</module>
+		<module>webobjects-app-archetype</module>
+		<module>webobjects-framework-archetype</module>
 	</modules>
 </project>

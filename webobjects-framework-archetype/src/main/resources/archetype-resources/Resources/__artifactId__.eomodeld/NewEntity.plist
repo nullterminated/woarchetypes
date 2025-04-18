@@ -1,0 +1,21 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "new_entity_id"; 
+            name = newEntityId; 
+            prototypeName = id; 
+        }, 
+        {columnName = quantity; name = quantity; prototypeName = intNumber; }
+    ); 
+    attributesUsedForLocking = (newEntityId, quantity); 
+    className = "${package}.model.NewEntity"; 
+    classProperties = (quantity); 
+    externalName = "new_entity"; 
+    fetchSpecificationDictionary = {}; 
+    name = NewEntity; 
+    primaryKeyAttributes = (newEntityId); 
+}

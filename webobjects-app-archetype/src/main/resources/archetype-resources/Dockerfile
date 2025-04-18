@@ -2,7 +2,7 @@
 # docker build --build-arg projname=wodocker --build-arg version=0.0.1-SNAPSHOT -t wodocker:0.0.1-SNAPSHOT -t wodocker:latest .
 # Run with something like
 # docker run -it -p 8080:8080 --rm wodocker
-FROM openjdk:17-slim
+FROM openjdk:21-slim
 ARG version
 ARG projname
 ENV NEXT_ROOT=/

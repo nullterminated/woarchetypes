@@ -1,0 +1,15 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {}; 
+    entities = ({className = "${package}.model.NewEntity"; name = NewEntity; }); 
+    userInfo = {
+        "_EntityModeler" = {
+            attributeNamingConvention = {case = Lower; separator = Underscore; }; 
+            entityNamingConvention = {case = Lower; separator = Underscore; }; 
+        }; 
+    }; 
+}
