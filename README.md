@@ -4,7 +4,7 @@ This repo contains project templates for a WebObjects projects enhanced with Pro
 
 # Usage
 ```
-git clone git@github.com:nullterminated/woarchetypes.git
+git clone https://github.com/nullterminated/woarchetypes.git
 cd woarchetypes
 mvn clean install
 mvn archetype:crawl
