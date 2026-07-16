@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<archetype-descriptor xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 http://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd" name="webobjects-app"
+<archetype-descriptor xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 http://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd" name="Basic WebObjects app"
     xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <fileSets>
@@ -7,6 +7,12 @@
       <directory>Sources</directory>
       <includes>
         <include>**/*.java</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>FilteredResources</directory>
+      <includes>
+        <include>**/*.plist</include>
       </includes>
     </fileSet>
     <fileSet filtered="true" encoding="UTF-8">
@@ -19,12 +25,6 @@
       <directory>Components</directory>
       <includes>
         <include>**/*.api</include>
-      </includes>
-    </fileSet>
-    <fileSet encoding="UTF-8">
-      <directory>woproject</directory>
-      <includes>
-        <include>**/*.patternset</include>
       </includes>
     </fileSet>
     <fileSet encoding="UTF-8">
@@ -59,19 +59,11 @@
         <include>**/*.css</include>
       </includes>
     </fileSet>
-    <fileSet encoding="UTF-8">
-      <directory>.settings</directory>
-      <includes>
-        <include>**/*.prefs</include>
-      </includes>
-    </fileSet>
     <fileSet filtered="true" encoding="UTF-8">
       <directory></directory>
       <includes>
-        <include>build.xml</include>
-        <include>.classpath</include>
         <include>.project</include>
-        <include>build.properties</include>
+        <include>__artifactId__.launch</include>
       </includes>
     </fileSet>
     <fileSet encoding="UTF-8">
@@ -79,7 +71,7 @@
       <includes>
         <include>README.md</include>
         <include>Dockerfile</include>
-        <include>gitignore</include>
+        <include>.gitignore</include>
       </includes>
     </fileSet>
   </fileSets>
