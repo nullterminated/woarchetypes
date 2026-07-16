@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.2.0 https://maven.apache.org/xsd/archetype-descriptor-1.2.0.xsd" name="All-in-one Webobjects App"
+    xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.2.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <fileSets>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>Components/Nonlocalized.lproj</directory>
+      <includes>
+        <include>**/*.html</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>Sources</directory>
+      <includes>
+        <include>**/*.java</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>Resources</directory>
+      <includes>
+        <include>**/*.txt</include>
+        <include>**/*.properties</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>FilteredResources</directory>
+      <includes>
+        <include>**/*.plist</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>Resources/Japanese.lproj</directory>
+      <includes>
+        <include>**/*.strings</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>Resources/English.lproj</directory>
+      <includes>
+        <include>**/*.strings</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>Components</directory>
+      <includes>
+        <include>**/*.api</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>Components/Nonlocalized.lproj</directory>
+      <includes>
+        <include>**/*.woo</include>
+        <include>**/*.wod</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>WebServerResources/js</directory>
+      <includes>
+        <include>**/*.js</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>Resources</directory>
+      <includes>
+        <include>**/*.d2wmodel</include>
+        <include>**/*.plist</include>
+        <include>**/*.dev</include>
+        <include>**/Properties</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>WebServerResources/css</directory>
+      <includes>
+        <include>**/*.css</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>WebServerResources/img</directory>
+      <includes>
+        <include>**/*.ico</include>
+        <include>**/*.png</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <includes>
+        <include>.project</include>
+        <include>__artifactId__.launch</include>
+        <include>README.md</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <includes>
+        <include>.gitignore</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+</archetype-descriptor>

@@ -1,0 +1,28 @@
+(
+	{
+		name = Root;
+		children = (ItemOne,ItemTwo,QueryAll,Login,Logout);
+	},
+	{
+		name = ItemOne;
+		directActionName = "default";
+	},
+	{
+		name = ItemTwo;
+		directActionName = "default";
+	},
+	{
+		name = QueryAll;
+		directActionName = "QueryAll";
+		children = (SearchERSessionInfo);
+	},
+	{
+		name = SearchERSessionInfo;
+		directActionName = "QueryERSessionInfo";
+		children = (InspectERSessionInfo);
+	},
+	{
+		name = InspectERSessionInfo;
+		directActionName = "InspectERSessionInfo";
+	}
+)

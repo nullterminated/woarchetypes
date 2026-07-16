@@ -1,0 +1,42 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<!DOCTYPE html>
+<webobject name = "HTML">
+	<webobject name = "Head">
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1"/>
+		<!-- TODO add description meta data -->
+		<!-- https://cdn.jsdelivr.net/npm/sakura.css/css/sakura-earthly.css -->
+		<!-- https://metakirby5.github.io/yorha/dist/yorha.css -->
+		<!-- https://eternityforest.github.io/barrel.css/css/barrel.css -->
+		<!-- https://unpkg.com/tty.css -->
+		<!-- https://cdn.jsdelivr.net/npm/tiny.css@0/dist/tiny.css -->
+		<link rel="stylesheet" type="text/css" href="https://metakirby5.github.io/yorha/dist/yorha.css" />
+		<webobject name = "StyleSheet"></webobject>
+		<webobject name = "IsDevelopment"><webobject name = "DevStyleSheet"/></webobject>
+		
+		<webobject name = "FavIcon" />
+		<webobject name = "AppIcon" />
+		<webobject name = "TimeZoneDetector"/>
+	</webobject>
+	<body>
+		<a id="skipNavigation" href = "${symbol_pound}mainContent"><webobject name = "SkipNav" /></a>
+		<header>
+			<webobject name = "HasLanguages"><webobject name = "Languages"/></webobject>
+			<h1>Site Name</h1>
+		</header>
+		<div id="pageBody">
+			<div>
+				<webobject name = "BreadCrumbTrail"/>
+				<main id="mainContent">
+					<webobject name = "Content" />
+				</main>
+			</div>
+			<webobject name = "Navigation"/>
+		</div>
+		<webobject name = "DebugFlags" />
+		<webobject name = "MuJS"/>
+		<script>mu.init({morph: false});</script>
+	</body>
+</webobject>

@@ -1,0 +1,7 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+(
+    10 : *true* => headerComponentName = "ERXEmptyComponent" [com.webobjects.directtoweb.Assignment],
+    20 : (RuleIsDisabled = 'YES' and (task = 'edit' and smartRelationship != null)) => componentName = "ERDEditRelationship" [com.webobjects.directtoweb.Assignment]
+)

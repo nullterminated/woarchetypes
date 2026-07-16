@@ -1,0 +1,163 @@
+WOAutoOpenInBrowser=false
+
+WOAllowConcurrentRequestHandling=true
+#WOStatisticsPassword=password
+
+#Preference handling
+er.corebusinesslogic.ERCoreUserPreferences.handlerClassName=er.r2d2w.delegates.PreferenceHandlerDelegate
+
+#ERXJavascript
+#Hiding in comment doesn't work when serving as application/xhtml+xml mime type
+er.extensions.ERXJavaScript.hideInComment=false
+
+#ERXModernizr
+er.extensions.components.ERXModernizr.modernizrFileName=js/modernizr-1.7.min.js
+
+#Auto adjust WOString and WOTextfield for session.timeZone
+er.extensions.ERXSession.autoAdjustTimeZone=true
+
+# Migrations
+er.migration.migrateAtStartup=true 
+er.migration.createTablesIfNecessary=true 
+
+# Connection Dictionary
+#dbConnectURLGLOBAL=jdbc:postgresql://localhost/Example
+#dbConnectUserGLOBAL=postgres
+#dbConnectPasswordGLOBAL=mypassword
+#dbEOPrototypesEntityGLOBAL=EOJDBCPostgresqlPrototypes
+#dbConnectDriverGLOBAL=org.postgresql.Driver
+
+# ERAttachment
+#er.attachment.file.filesystemPath=/path/to/uploads/${pk}${ext}
+#er.attachment.file.webPath=/uploads/${pk}${ext}
+#er.attachment.storageType=file
+#er.attachment.proxyAsAttachment=true
+
+# ERR2d2w
+#er.r2d2w.ERR2d2w.createsDerivedCounts=true
+#er.r2d2w.ERR2d2w.ignoreModels=(ERAttachment,erprototypes)
+
+# ERXEC
+er.extensions.ERXApplication.useEditingContextUnlocker=true
+er.extensions.ERXEC.defaultAutomaticLockUnlock=true
+er.extensions.ERXEC.useSharedEditingContext=false
+er.extensions.ERXEC.defaultCoalesceAutoLocks=true
+er.extensions.ERXEC.useUnlocker=true
+er.extensions.ERXEC.safeLocking=true
+
+# Don't use these when using VertxWOAdaptor since it does this for you.
+# GZip Responses
+#er.extensions.ERXApplication.responseCompressionEnabled=true
+#er.extensions.ERXApplication.responseCompressionTypes=("application/x-javascript", "application/xhtml+xml", "application/xml")
+
+# Secure session cookies
+er.extensions.ERXSession.useSecureSessionCookies=true
+er.extensions.ERXSession.useHttpOnlySessionCookies=true
+
+# Localization
+ERXLanguages=(en,ja)
+er.extensions.ERXGenericRecord.localizationShouldFallbackToDefaultLanguage=true
+er.extensions.ERXLocalizer.availableLanguages=(English,Japanese)
+er.extensions.ERXLocalizer.defaultLanguage=English
+er.extensions.ERXLocalizer.fileNamesToWatch=("Localizable.strings","ValidationTemplate.strings")
+er.extensions.ERXNavigationManager.localizeDisplayKeys=true
+#er.extensions.ERXLocalizer.frameworkSearchPath=(app,ERR2d2w,ERDirectToWeb,ERExtensions)
+#er.extensions.ERXLocalizer.useLocalizedFormatters=true
+
+
+# Project Encoding
+er.extensions.ERXApplication.DefaultEncoding=UTF-8
+
+# Click to Open
+#wolips.password=password
+#wolips.host=localhost
+#wolips.port=9485
+#er.component.clickToOpen=true
+#er.extensions.ERXApplication.developmentMode=true
+# These two are unnecessary if using the Ajax framework in Wonder
+#wolips.prototype.framework=app
+#wolips.prototype.fileName=prototype.js
+
+# ERJavaMail
+#er.javamail.adminEmail=admin@yourhost.com
+er.javamail.centralize=false
+#er.javamail.debugEnabled=false
+#er.javamail.milliSecondsWaitIfSenderOverflowed=6000
+#er.javamail.smtpHost=your.smtpserver.com
+#er.javamail.smtpAuth=false
+#er.javamail.smtpUser=
+#er.javamail.smtpPassword=
+er.javamail.defaultEncoding=UTF-8
+
+# Log4j Configuration
+
+# Set root category priority to DEBUG and its only appender to A1.
+log4j.rootCategory=DEBUG, A1
+
+# A1 is set to be a FileAppender which outputs to System.out.
+log4j.appender.A1=org.apache.log4j.ConsoleAppender
+
+# A1 uses PatternLayout.
+log4j.appender.A1.layout=er.extensions.logging.ERXPatternLayout
+log4j.appender.A1.layout.ConversionPattern=%d{yy-MM-dd HH:mm:ss.SSS} %-5p (%F:%L) - %m%n
+# Note that (%F:%L) is fairly slow and shouldn't be used in performance intensive logging
+
+# Custom Categories - These are the main categories and sub categories
+# that are used in frameworks.
+# Base Category
+log4j.logger.er=INFO
+log4j.logger.io.netty=INFO
+
+# Here are a few log4j sub-categories that are interesting.
+# Don't forget that in developement mode this file will get reloaded
+# everytime it changes, so if you say want to turn adaptor debugging
+# on in the middle of the app simply set the below category to debug.
+# Very handy.
+
+# ERExtensions
+# Transaction - Switching this to debug will start the sql ouputting.
+log4j.logger.er.transaction.adaptor.EOAdaptorDebugEnabled=INFO
+
+
+## Enable delegate to emit SQL debugging info. The Logger used is
+## log4j.category.er.extensions.ERXAdaptorChannelDelegate.sqlLogging
+er.extensions.ERXAdaptorChannelDelegate.enabled=true
+
+## How long a statement must run to cause a log message. Messages with longer than
+## error also emit a stack-trace
+er.extensions.ERXAdaptorChannelDelegate.trace.milliSeconds.debug=0
+er.extensions.ERXAdaptorChannelDelegate.trace.milliSeconds.info=100
+er.extensions.ERXAdaptorChannelDelegate.trace.milliSeconds.warn=2000
+er.extensions.ERXAdaptorChannelDelegate.trace.milliSeconds.error=15000
+
+## MaxLength of the message
+er.extensions.ERXAdaptorChannelDelegate.trace.maxLength = 3000
+
+## What entities to watch
+er.extensions.ERXAdaptorChannelDelegate.trace.entityMatchPattern = .*
+
+## Actually set the log level
+log4j.logger.er.extensions.ERXAdaptorChannelDelegate.sqlLogging=INFO
+
+# Fixes - Turning this on will show all the models that are loaded
+log4j.logger.er.extensions.fixes.ERSharedEOLoader=INFO
+
+er.extensions.ERXNSLogLog4jBridge=INFO
+
+#log4j.logger.er.eo.ERXGenericRecord=DEBUG
+#log4j.logger.er.validation.ERXEntityClassDescription=DEBUG
+#log4j.logger.er.default.ERXEntityClassDescription=DEBUG
+#log4j.logger.er.extensions.ERXApplication.RequestHandling=DEBUG
+
+log4j.logger.er.extensions.ERXDatabaseContextDelegate=WARN
+log4j.logger.er.extensions.ERXConfigurationManager=INFO
+#log4j.logger.ognl.helperfunction.WOHelperFunctionParser=WARN
+
+log4j.category.com.webobjects.eoaccess.ERXModel=WARN
+log4j.logger.org.apache.commons=INFO
+log4j.category.er.extensions.appserver.ERXApplication$JarChecker=WARN
+
+loggerPattern=%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
+
+dbConnectURLGLOBAL=jdbc:h2:file://tmp/Example
+com.webobjects.eoaccess.ERXEntityDependencyOrderingDelegate.active=true
