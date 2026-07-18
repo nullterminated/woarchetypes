@@ -4,34 +4,6 @@
 	<groupId>${groupId}</groupId>
 	<artifactId>${artifactId}</artifactId>
 	<version>${version}</version>
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<wonder.version>7.4</wonder.version>
-	</properties>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>wocommunity.releases</id>
-			<name>WOCommunity Releases</name>
-			<releases>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-			<url>https://maven.wocommunity.org/content/groups/public/</url>
-		</pluginRepository>
-	</pluginRepositories>
-	<repositories>
-		<repository>
-			<id>wocommunity.releases</id>
-			<name>WOCommunity Releases</name>
-			<releases>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-			<url>https://maven.wocommunity.org/content/groups/public/</url>
-		</repository>
-	</repositories>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -43,21 +15,24 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.release>25</maven.compiler.release>
+		<wonder.version>8.0.0</wonder.version>
+		<doclint>none</doclint>
+	</properties>
 	<dependencies>
+		<!-- Wonder frameworks -->
 		<dependency>
-			<groupId>wonder.core</groupId>
-			<artifactId>ERExtensions</artifactId>
+			<groupId>io.github.wocommunity.wonder.core</groupId>
+			<artifactId>erextensions</artifactId>
 			<version>${wonder.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>wonder.core</groupId>
-			<artifactId>ERPrototypes</artifactId>
+			<groupId>io.github.wocommunity.wonder.core</groupId>
+			<artifactId>erprototypes</artifactId>
 			<version>${wonder.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.7.32</version>
 		</dependency>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
@@ -69,58 +44,23 @@
 			<artifactId>junit-platform-runner</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<version>2.3.232</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>wonder.plugins</groupId>
-			<artifactId>H2PlugIn</artifactId>
-			<version>${wonder.version}</version>
-			<scope>test</scope>
-		</dependency>
 	</dependencies>
 	<build>
 		<sourceDirectory>Sources</sourceDirectory>
 		<testSourceDirectory>Tests</testSourceDirectory>
 		<resources>
 			<resource>
-				<targetPath>Resources</targetPath>
+				<targetPath>META-INF/webobjects/Resources</targetPath>
 				<directory>Components</directory>
 			</resource>
 			<resource>
-				<targetPath>Resources</targetPath>
+				<targetPath>META-INF/webobjects/Resources</targetPath>
 				<directory>Resources</directory>
 			</resource>
 			<resource>
-				<targetPath>WebServerResources</targetPath>
+				<targetPath>META-INF/webobjects/WebServerResources</targetPath>
 				<directory>WebServerResources</directory>
 			</resource>
 		</resources>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
-				<configuration>
-					<source>21</source>
-					<target>21</target>
-					<compilerArgs>
-						<compilerArg>--add-exports</compilerArg>
-						<compilerArg>java.base/sun.security.action=ALL-UNNAMED</compilerArg>
-					</compilerArgs>
-				</configuration>
-			</plugin>
-			<plugin>
-				<?m2e ignore?>
-				<groupId>io.github.wocommunity</groupId>
-				<artifactId>wolifecycle-maven-plugin</artifactId>
-				<version>2.7</version>
-				<extensions>true</extensions>
-			</plugin>
-		</plugins>
 	</build>
 </project>
