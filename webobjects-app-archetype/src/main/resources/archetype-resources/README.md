@@ -10,6 +10,15 @@ Prerequisites,
 * Docker installed and configured so that you do not need to sudo to use docker
 * amazon-ecr-credential-helper installed and configured so that you can push to your ecr repository without needing to use aws get-login-password
 
+Install WebObjects
+
+1. Install WebObjects from Apple into your ~/.m2 repository.
+    1. mvn io.github.wocommunity:woinstall-maven-plugin:woinstall
+2. Build & install the womodular project.
+    1. git clone https://github.com/wocommunity/womodular.git
+    2. mvn clean install -f womodular/pom.xml
+    3. rm -rf womodular
+
 To build the project,
 
 ```
