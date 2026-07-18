@@ -20,24 +20,42 @@
 			<artifactId>erextensions</artifactId>
 			<version>${wonder.version}</version>
 		</dependency>
+		<!-- logging -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j2-impl</artifactId>
+			<version>2.26.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.26.0</version>
+		</dependency>
 	</dependencies>
 	<build>
-		<sourceDirectory>Sources</sourceDirectory>
 		<testSourceDirectory>Tests</testSourceDirectory>
+		<sourceDirectory>Sources</sourceDirectory>
 		<resources>
 			<resource>
-				<targetPath>Resources</targetPath>
-				<filtering>false</filtering>
+				<targetPath>META-INF/webobjects/Resources</targetPath>
 				<directory>Components</directory>
 			</resource>
 			<resource>
-				<targetPath>Resources</targetPath>
-				<filtering>false</filtering>
+				<targetPath>META-INF/webobjects/Resources</targetPath>
 				<directory>Resources</directory>
+				<excludes>
+					<exclude>log4j2.properties</exclude>
+				</excludes>
+			</resource>
+			<!-- these files need to be directly in target/classes -->
+			<resource>
+				<directory>Resources</directory>
+				<includes>
+					<include>log4j2.properties</include>
+				</includes>
 			</resource>
 			<resource>
-				<targetPath>WebServerResources</targetPath>
-				<filtering>false</filtering>
+				<targetPath>META-INF/webobjects/WebServerResources</targetPath>
 				<directory>WebServerResources</directory>
 			</resource>
 		</resources>
