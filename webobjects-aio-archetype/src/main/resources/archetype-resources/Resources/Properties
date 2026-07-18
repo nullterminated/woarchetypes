@@ -98,8 +98,8 @@ log4j.rootCategory=DEBUG, A1
 log4j.appender.A1=org.apache.log4j.ConsoleAppender
 
 # A1 uses PatternLayout.
-log4j.appender.A1.layout=er.extensions.logging.ERXPatternLayout
-log4j.appender.A1.layout.ConversionPattern=%d{yy-MM-dd HH:mm:ss.SSS} %-5p (%F:%L) - %m%n
+#log4j.appender.A1.layout=er.extensions.logging.ERXPatternLayout
+#log4j.appender.A1.layout.ConversionPattern=%d{yy-MM-dd HH:mm:ss.SSS} %-5p (%F:%L) - %m%n
 # Note that (%F:%L) is fairly slow and shouldn't be used in performance intensive logging
 
 # Custom Categories - These are the main categories and sub categories
