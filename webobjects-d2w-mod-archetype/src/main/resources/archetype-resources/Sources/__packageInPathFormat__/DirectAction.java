@@ -9,7 +9,7 @@ import com.webobjects.directtoweb.D2W;
 import com.webobjects.foundation.NSLog;
 
 import er.directtoweb.ERD2WDirectAction;
-import your.app.components.Main;
+import ${package}.components.Main;
 
 
 public class DirectAction extends ERD2WDirectAction {
