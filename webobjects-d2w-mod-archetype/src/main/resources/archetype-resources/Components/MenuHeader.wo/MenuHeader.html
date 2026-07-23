@@ -1,0 +1,18 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<webobject name = "HasValidSession">
+<div class = "MenuHeaderWrapper">
+<div class = "Heading MenuHeaderHeading">
+    <h1>${artifactId}</h1>
+</div>
+<div class = "Menu UserMenu">
+    <ul class = "MenuOptions UserMenuOptions">
+        <li class="first"><a href = "${symbol_pound}">Logged In User</a></li>
+        <li><webobject name = "HomeLink">Homepage</webobject></li>
+        <li><webobject name = "LoginLink">Log Out</webobject></li>
+    </ul>
+</div>
+</div>
+<webobject name = "ERXNavigationMenu"/>
+</webobject>
