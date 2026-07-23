@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-open module ${artifactId} {
+module ${package}.${artifactId} {
 	requires org.slf4j;
 	requires org.wocommunity.webobjects.eocontrol;
 	requires org.wocommunity.webobjects.foundation;

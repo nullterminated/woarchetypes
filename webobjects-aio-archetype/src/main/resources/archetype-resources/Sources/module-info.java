@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-open module ${artifactId} {
+module ${package}.${artifactId} {
 	requires com.h2database;
 	requires org.slf4j;
 	requires org.apache.logging.log4j.core;
